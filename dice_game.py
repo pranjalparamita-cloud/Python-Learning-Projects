@@ -1,6 +1,7 @@
 print("--------------------Dice Game--------------------")
-
+from playsound import playsound
 import random
+import time
 print("Kya tum khelna chahte ho? (No/Yes)")
 choice=input()
 if choice=="No":
@@ -9,6 +10,7 @@ if choice=="No":
 else:
     while True:
         print("Game start hua...")
+        playsound("MINIPROJECT/untitled-project-1_jFGqx9T.mp3")
         players = []
         num_players = int(input("Kitne players khel rahe hain? Enter number of players: "))
         for i in (range(1, num_players + 1)):
@@ -17,8 +19,14 @@ else:
         rounds = 5
         for round in range(1, rounds + 1):
             print(f"\n--- Round {round} ---")
+            playsound("MINIPROJECT/ruko-jaraa.mp3")
+            time.sleep(0.5)
+            
+            
             for player in players:
                 input(f"{player}, press Enter to roll the dice...")
+                playsound("MINIPROJECT/shake-and-roll-dice-soundbible (1).mp3")
+                playsound("MINIPROJECT/shake-and-roll-dice-soundbible (1).mp3")
                 roll = random.randint(1, 6)
                 scores[player] += roll
                 print(f"{player} rolled a {roll}. Total score: {scores[player]}")
@@ -28,9 +36,11 @@ else:
             print(f"{player} wins the game with a score of: {score}")
             if score > 20:
                 print(f"Congratulations {player}! Tum toh champion nikle !")
+                playsound("MINIPROJECT/matlab-wo-alag-hi-level-ka-banda-tha.mp3")
         print("Thank you for playing the Dice Game!")
         play_again=input("Phirse kheloge? (yes/no): ").lower()
         if play_again!="yes":
             break
     print("\nGame Khatam hua.......Bye Bye!")
+    playsound("MINIPROJECT/gameover_1.mp3")
     
